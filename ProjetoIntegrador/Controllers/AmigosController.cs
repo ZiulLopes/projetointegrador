@@ -34,7 +34,7 @@ namespace ProjetoIntegrador.Controllers
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            var listusers = dbcontext.usuarios.Where(x => x.ATIVO == true).ToList();
+            var listusers = dbcontext.usuarios.Where(x => x.IDUSUARIO != UserBussiness.IdUser && x.ATIVO == true).ToList();
             return View(listusers.ToPagedList(pageNumber, pageSize));
         }
 

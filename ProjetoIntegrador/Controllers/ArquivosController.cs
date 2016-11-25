@@ -1,9 +1,12 @@
-﻿using ProjetoIntegrador.Models;
+﻿using ProjetoIntegrador.Bussiness;
+using ProjetoIntegrador.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
+using PagedList;
 
 namespace ProjetoIntegrador.Controllers
 {
@@ -13,9 +16,14 @@ namespace ProjetoIntegrador.Controllers
 
         //
         // GET: /Arquivos/Index
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View();
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            
+            var files = dbcontext.arquivoes.Where(x => x.IDUSUARIO == UserBussiness.IdUser && x.ATIVO == true).ToList();
+
+            return View(files.ToPagedList(pageNumber, pageSize));
         }
 
         //

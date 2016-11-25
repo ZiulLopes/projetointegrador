@@ -23,7 +23,7 @@ namespace ProjetoIntegrador.Controllers
             int pageSize = 3;
             int pageNumber = (page ?? 1);
 
-            var files = dbcontext.arquivoes.Where(x => x.usuario.amigoes1.FirstOrDefault().IDUSUARIO1 == UserBussiness.IdUser).ToList();
+            var files = dbcontext.arquivoes.Where(x => x.usuario.amigoes1.FirstOrDefault().IDUSUARIO1 == UserBussiness.IdUser).OrderByDescending(x => x.DATAENVIOARQUIVO).ToList();
 
             return View(files.ToPagedList(pageNumber, pageSize));
             return View();

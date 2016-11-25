@@ -1,4 +1,5 @@
-﻿<div class="m-t-20 page-header">
+﻿@model PagedList.PagedList<ProjetoIntegrador.Models.arquivo>
+<div class="m-t-20 page-header">
     <!--
 				<div class="pull-left">
 					<h1>Dashboard</h1>
@@ -46,28 +47,31 @@
                         <tr>
                             <th>Nome</th>
                             <th>Data</th>
-                            <th>Excluir</th>
+                            <th>Ação</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Trident</td>
-                            <td>12/10/2016
-                            </td>
-                            <td class="hidden-350"><a href="#"><i class="fa fa-trash"></i></a></td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.NOMEARQUIVO</td>
+                                <td>@item.DATAENVIOARQUIVO</td>
+                                <td class="hidden-350">
+                                    <a href="#"><i class="fa fa-trash"></i></a>   |   <a href="@item.PATHARQUIVO" target="_blank"><i class="fa fa-download"></i></a>
+                                </td>
+                            </tr>   
+                        }
                     </tbody>
                 </table>
                 <div class="table-pagination">
-                    <a href="#" class="disabled">Primeiro</a>
-                    <a href="#" class="disabled"><<</a>
-                    <span>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                    </span>
-                    <a href="#">>></a>
-                    <a href="#">Último</a>
+                    @if (Model.HasPreviousPage)
+                    {
+                        <a href="@Url.Action("Index", "Arquivos", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })"><<</a>
+                    }
+                    @if (Model.HasNextPage)
+                    {
+                        <a href="@Url.Action("Index", "Arquivos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">>></a>
+                    }
                 </div>
             </div>
         </div>
