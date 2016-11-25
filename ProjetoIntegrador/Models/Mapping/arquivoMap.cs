@@ -14,6 +14,10 @@ namespace ProjetoIntegrador.Models.Mapping
             this.Property(t => t.NOMEARQUIVO)
                 .HasMaxLength(50);
 
+            this.Property(t => t.DESCRICAO)
+                .IsRequired()
+                .HasMaxLength(2000);
+
             this.Property(t => t.PATHARQUIVO)
                 .IsRequired()
                 .HasMaxLength(300);
@@ -24,6 +28,7 @@ namespace ProjetoIntegrador.Models.Mapping
             this.Property(t => t.IDUSUARIO).HasColumnName("IDUSUARIO");
             this.Property(t => t.DATAENVIOARQUIVO).HasColumnName("DATAENVIOARQUIVO");
             this.Property(t => t.NOMEARQUIVO).HasColumnName("NOMEARQUIVO");
+            this.Property(t => t.DESCRICAO).HasColumnName("DESCRICAO");
             this.Property(t => t.PATHARQUIVO).HasColumnName("PATHARQUIVO");
             this.Property(t => t.ATIVO).HasColumnName("ATIVO");
 

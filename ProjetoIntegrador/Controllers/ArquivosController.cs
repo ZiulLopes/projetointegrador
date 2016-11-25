@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoIntegrador.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace ProjetoIntegrador.Controllers
 {
     public class ArquivosController : Controller
     {
+        projetointegradorContext dbcontext = new projetointegradorContext();
+
         //
         // GET: /Arquivos/Index
         public ActionResult Index()
@@ -17,9 +20,10 @@ namespace ProjetoIntegrador.Controllers
 
         //
         // GET: /Arquivos/ArquivoInfo
-        public ActionResult ArquivoInfo()
+        public ActionResult ArquivoInfo(int? id)
         {
-            return View();
+            var file = dbcontext.arquivoes.Where(x => x.IDARQUIVO == id && x.ATIVO == true).FirstOrDefault();
+            return View(file);
         }
     }
 }

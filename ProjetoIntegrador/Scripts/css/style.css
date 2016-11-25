@@ -9363,3 +9363,8 @@ a:focus {
 .m-r-40 {
   margin-right: 40px !important;
 }
+
+.dropdown-toggle img {
+    width: 27px;
+    height: 27px;
+}

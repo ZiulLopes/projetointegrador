@@ -1,4 +1,5 @@
-﻿<div class="row">
+﻿@model ProjetoIntegrador.Models.arquivo
+<div class="row">
     <div class="col-sm-9">
         <div class="row">
             <div class="blog-list-post">
@@ -9,7 +10,7 @@
                 </div>
                 <div class="post-content">
                     <h4 class="post-title">
-                        <a href="#">Lorem ipsum Pariatur labore magna!</a>
+                        <a href="@Model.PATHARQUIVO">@Model.NOMEARQUIVO</a>
                     </h4>
                     <!--
                     <div class="post-meta">
@@ -33,12 +34,7 @@
                     </div>
                     -->
                     <div class="post-text">
-                        <p>
-                            Lorem ipsum Do commodo Excepteur mollit officia veniam occaecat fugiat ullamco officia labore Ut cupidatat. Lorem ipsum Veniam non ut tempor occaecat exercitation culpa ullamco id. Lorem ipsum Dolore incididunt Duis ullamco sed commodo sit id.
-											Lorem ipsum Commodo nisi Excepteur Ut dolore sit occaecat aute reprehenderit ullamco elit. Lorem ipsum In velit deserunt ex dolore deserunt dolor cupidatat ea.
-                        </p>
-                        <p>Lorem ipsum Laborum non enim et laboris esse ut sunt non in ex in est.</p>
-                        <p>Lorem ipsum Excepteur adipisicing cupidatat aute do in consequat adipisicing proident elit. Lorem ipsum Occaecat magna sed minim id nostrud irure cupidatat amet culpa. Lorem ipsum Ad dolore elit eiusmod tempor voluptate elit qui.</p>
+                        <p>@Model.DESCRICAO</p>
                     </div>
                 </div>
                 <div class="post-comments">

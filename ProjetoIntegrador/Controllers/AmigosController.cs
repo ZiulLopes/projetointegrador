@@ -22,23 +22,7 @@ namespace ProjetoIntegrador.Controllers
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-
-            var amigos = new[] {
-                new Amigos { QuestionId = 1, QuestionName = "Question 1" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 2" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 3" },
-                new Amigos { QuestionId = 1, QuestionName = "Question 4" }
-            };
-
+            
             var myamigos = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser).ToList();
 
             return View(myamigos.ToPagedList(pageNumber, pageSize));

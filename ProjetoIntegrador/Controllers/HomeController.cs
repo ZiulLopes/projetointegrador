@@ -7,14 +7,25 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
+using PagedList;
+
 namespace ProjetoIntegrador.Controllers
 {
     public class HomeController : Controller
     {
+        projetointegradorContext dbcontext = new projetointegradorContext();
+
         //
         // GET: /Home/Index
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            var files = dbcontext.arquivoes.Where(x => x.usuario.amigoes1.FirstOrDefault().IDUSUARIO1 == UserBussiness.IdUser).ToList();
+
+            return View(files.ToPagedList(pageNumber, pageSize));
             return View();
         }
 

@@ -41,5 +41,12 @@ namespace ProjetoIntegrador.Bussiness
             }
             return false;
         }
+
+        public static string ImageFromUser
+        {
+            get {
+                return dbcontext.usuarios.Find(IdUser).PATHIMAGEM;
+            }
+        }
     }
 }
