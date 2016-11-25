@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Nov-2016 às 16:25
+-- Generation Time: 25-Nov-2016 às 16:35
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -41,7 +41,8 @@ INSERT INTO `amigo` (`IDUSUARIO1`, `IDUSUARIO2`, `ATIVO`) VALUES
 (1, 2, 1),
 (3, 1, 1),
 (3, 2, 1),
-(3, 4, 1);
+(3, 4, 1),
+(2, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -54,9 +55,17 @@ CREATE TABLE `arquivo` (
   `IDUSUARIO` int(11) DEFAULT NULL,
   `DATAENVIOARQUIVO` datetime DEFAULT NULL,
   `NOMEARQUIVO` varchar(50) DEFAULT NULL,
+  `DESCRICAO` varchar(2000) NOT NULL,
   `PATHARQUIVO` varchar(300) NOT NULL,
   `ATIVO` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `arquivo`
+--
+
+INSERT INTO `arquivo` (`IDARQUIVO`, `IDUSUARIO`, `DATAENVIOARQUIVO`, `NOMEARQUIVO`, `DESCRICAO`, `PATHARQUIVO`, `ATIVO`) VALUES
+(1, 3, '2016-11-25 00:00:00', 'Primeiro arquivo', 'Lorem ipsum Do commodo Excepteur mollit officia veniam occaecat fugiat ullamco officia labore Ut cupidatat. Lorem ipsum Veniam non ut tempor occaecat exercitation culpa ullamco id. Lorem ipsum Dolore incididunt Duis ullamco sed commodo sit id. Lorem ipsum Commodo nisi Excepteur Ut dolore sit occaecat aute reprehenderit ullamco elit. Lorem ipsum In velit deserunt ex dolore deserunt dolor cupidatat ea.\n\nLorem ipsum Laborum non enim et laboris esse ut sunt non in ex in est.\n\nLorem ipsum Excepteur adipisicing cupidatat aute do in consequat adipisicing proident elit. Lorem ipsum Occaecat magna sed minim id nostrud irure cupidatat amet culpa. Lorem ipsum Ad dolore elit eiusmod tempor voluptate elit qui.', '/FilesUploaded/0001.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -106,7 +115,7 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`IDUSUARIO`, `NOMEUSUARIO`, `DATANASCUSUARIO`, `SEXOUSUARIO`, `EMAILUSUARIO`, `SENHAUSUARIO`, `TELEFONEUSUARIO`, `DATACADASTRO`, `ATIVO`, `PATHIMAGEM`, `OBJETIVO`, `PERFIL`, `SOBREMIM`) VALUES
 (1, 'Jhon', '1994-11-08', 'M', 'jhon@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/10272575.jpg', NULL, NULL, ''),
 (2, 'Rodolfo Dona Hosp', '1989-09-17', 'M', 'rod@email.com.br', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/14650674.jpg', NULL, NULL, ''),
-(3, 'Luiz Fernando Lopes', '1991-11-21', 'M', 'lopesluiz_@hotmail.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/', NULL, NULL, ''),
+(3, 'Luiz Fernando Lopes', '1991-11-21', 'M', 'lopesluiz_@hotmail.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/11885160.jpg', NULL, NULL, ''),
 (4, 'Felipe Augusto Teixeira Fernandes', '1995-11-09', 'F', 'felipa@email.com.br', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/14708375.jpg', NULL, NULL, '');
 
 --
@@ -148,7 +157,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `arquivo`
 --
 ALTER TABLE `arquivo`
-  MODIFY `IDARQUIVO` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDARQUIVO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `endereco`
 --
