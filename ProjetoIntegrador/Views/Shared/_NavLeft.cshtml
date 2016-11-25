@@ -1,0 +1,27 @@
+﻿<div id="left" class="ui-sortable ui-resizable">
+    <form action="@Url.Action("ListAmigos", "Amigos")" method="GET" class="search-form">
+        <div class="search-pane">
+            <input type="text" name="search" placeholder="Procure amigos...">
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <div class="subnav">
+        <div class="subnav-title ui-sortable-handle">
+            <a href="#" class="toggle-subnav">
+                <i class="fa fa-angle-down"></i>
+                <span>Menu</span>
+            </a>
+        </div>
+        <ul class="subnav-menu">
+            <li>
+                <a href="@Url.Action("Index", "Amigos")">Amigos</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Arquivos")">Arquivos</a>
+            </li>
+        </ul>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; height: 346px;"></div>
+</div>

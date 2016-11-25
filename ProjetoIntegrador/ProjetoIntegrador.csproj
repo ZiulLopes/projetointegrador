@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A9379DA-66D3-491B-85A4-BE84B74CB3FB}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoIntegrador</RootNamespace>
+    <AssemblyName>ProjetoIntegrador</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bussiness\UserBussiness.cs" />
+    <Compile Include="Controllers\AmigosController.cs" />
+    <Compile Include="Controllers\ArquivosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\amigo.cs" />
+    <Compile Include="Models\Amigos.cs" />
+    <Compile Include="Models\arquivo.cs" />
+    <Compile Include="Models\endereco.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Mapping\amigoMap.cs" />
+    <Compile Include="Models\Mapping\arquivoMap.cs" />
+    <Compile Include="Models\Mapping\enderecoMap.cs" />
+    <Compile Include="Models\Mapping\usuarioMap.cs" />
+    <Compile Include="Models\projetointegradorContext.cs" />
+    <Compile Include="Models\usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Global.asax" />
+    <Content Include="ImagesUploaded\10272575.jpg" />
+    <Content Include="ImagesUploaded\14650674.jpg" />
+    <Content Include="ImagesUploaded\14708375.jpg" />
+    <Content Include="Scripts\css\all.css" />
+    <Content Include="Scripts\css\bootstrap.min.css" />
+    <Content Include="Scripts\css\jquery-ui.min.css" />
+    <Content Include="Scripts\css\jquery.fileupload.css" />
+    <Content Include="Scripts\css\plugins\all.css" />
+    <Content Include="Scripts\css\plugins\chosen.css" />
+    <Content Include="Scripts\css\plugins\fullcalendar.css" />
+    <Content Include="Scripts\css\plugins\fullcalendar.print.css" />
+    <Content Include="Scripts\css\plugins\jquery-ui.min.css" />
+    <Content Include="Scripts\css\plugins\pageguide.css" />
+    <Content Include="Scripts\css\plugins\select2.css" />
+    <Content Include="Scripts\css\style.css" />
+    <Content Include="Scripts\css\themes.css" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\img\7.jpg" />
+    <Content Include="Scripts\img\favicon.ico_bkp" />
+    <Content Include="Scripts\img\folders.png" />
+    <None Include="Scripts\js\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\img\1.jpg" />
+    <Content Include="Scripts\img\2.jpg" />
+    <Content Include="Scripts\img\3.jpg" />
+    <Content Include="Scripts\img\4.jpg" />
+    <Content Include="Scripts\img\5.jpg" />
+    <Content Include="Scripts\img\apple-touch-icon-precomposed.png" />
+    <Content Include="Scripts\img\favicon.ico" />
+    <Content Include="Scripts\img\flags\br.gif" />
+    <Content Include="Scripts\img\flags\de.gif" />
+    <Content Include="Scripts\img\flags\es.gif" />
+    <Content Include="Scripts\img\flags\fr.gif" />
+    <Content Include="Scripts\img\flags\us.gif" />
+    <Content Include="Scripts\img\folder.png" />
+    <Content Include="Scripts\img\folders.jpg" />
+    <Content Include="Scripts\img\loading.gif" />
+    <Content Include="Scripts\img\logo.png" />
+    <Content Include="Scripts\img\logo_.png" />
+    <Content Include="Scripts\img\plugins\chosen\chosen-sprite.png" />
+    <Content Include="Scripts\img\user-1.jpg" />
+    <Content Include="Scripts\img\user-2.jpg" />
+    <Content Include="Scripts\img\user-3.jpg" />
+    <Content Include="Scripts\img\user-4.jpg" />
+    <Content Include="Scripts\img\user-5.jpg" />
+    <Content Include="Scripts\img\user-6.jpg" />
+    <Content Include="Scripts\img\user-avatar.jpg" />
+    <Content Include="Scripts\js\additional-methods.min.js" />
+    <Content Include="Scripts\js\application.min.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\css\colorbox.css" />
+    <Content Include="Scripts\js\demonstration.min.js" />
+    <Content Include="Scripts\js\eakroko.min.js" />
+    <Content Include="Scripts\js\jquery-1.7.1.js" />
+    <Content Include="Scripts\js\jquery-1.7.1.min.js" />
+    <None Include="Scripts\js\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\js\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\js\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\js\jquery-ui.js" />
+    <Content Include="Scripts\js\jquery.bootbox.js" />
+    <Content Include="Scripts\js\jquery.colorbox.js" />
+    <Content Include="Scripts\js\jquery.fileupload.js" />
+    <Content Include="Scripts\js\jquery.form.min.js" />
+    <Content Include="Scripts\js\jquery.imagesloaded.min.js" />
+    <Content Include="Scripts\js\jquery.min.js" />
+    <Content Include="Scripts\js\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\js\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\js\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\js\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\js\jquery.validate.js" />
+    <Content Include="Scripts\js\jquery.validate.min.js" />
+    <Content Include="Scripts\js\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\js\knockout-2.1.0.js" />
+    <Content Include="Scripts\js\modernizr-2.5.3.js" />
+    <Content Include="Scripts\js\plugins\additional-methods.min.js" />
+    <Content Include="Scripts\js\plugins\chosen.jquery.min.js" />
+    <Content Include="Scripts\js\plugins\flot\jquery.flot.bar.order.min.js" />
+    <Content Include="Scripts\js\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Scripts\js\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Scripts\js\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\js\plugins\fullcalendar\moment.min.js" />
+    <Content Include="Scripts\js\plugins\jquery-ui.js" />
+    <Content Include="Scripts\js\plugins\jquery.bootbox.js" />
+    <Content Include="Scripts\js\plugins\jquery.form.min.js" />
+    <Content Include="Scripts\js\plugins\jquery.icheck.min.js" />
+    <Content Include="Scripts\js\plugins\jquery.imagesloaded.min.js" />
+    <Content Include="Scripts\js\plugins\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\js\plugins\jquery.pageguide.js" />
+    <Content Include="Scripts\js\plugins\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\js\plugins\jquery.touch-punch.min.js" />
+    <Content Include="Scripts\js\plugins\jquery.validate.min.js" />
+    <Content Include="Scripts\js\plugins\select2.min.js" />
+    <Content Include="Scripts\js\plugins\vmap\jquery.vmap.min.js" />
+    <Content Include="Scripts\js\plugins\vmap\jquery.vmap.sampledata.js" />
+    <Content Include="Scripts\js\plugins\vmap\jquery.vmap.world.js" />
+    <Content Include="Scripts\js\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Head.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Shared\_NavLeft.cshtml" />
+    <Content Include="Views\Shared\_NavLogin.cshtml" />
+    <Content Include="Views\Shared\_UserDropMenu.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Amigos\Index.cshtml" />
+    <Content Include="Views\Shared\_PagedList.cshtml" />
+    <Content Include="Views\Arquivos\Index.cshtml" />
+    <Content Include="Views\Amigos\ListAmigos.cshtml" />
+    <Content Include="Views\Amigos\AmigoInfo.cshtml" />
+    <Content Include="Views\Usuario\Perfil.cshtml" />
+    <Content Include="Views\Amigos\SearchAmigos.cshtml" />
+    <Content Include="Views\Arquivos\ArquivoInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="FilesUploaded\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:47992/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

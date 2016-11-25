@@ -1,0 +1,76 @@
+﻿@model PagedList.PagedList<ProjetoIntegrador.Models.usuario>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box box-color box-bordered">
+            <div class="box-title">
+                <h3>
+                    <i class="fa fa-search"></i>
+                    Resultado da pesquisa
+                </h3>
+            </div>
+            <div class="box-content nopadding">
+                <div class="search-results">
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                <div class="thumbnail">
+                                    <img src="~/Scripts/img/user-4.jpg" alt="">
+                                </div>
+                                <div class="search-info">
+                                    <a href="@Url.Action("AmigoInfo", "Amigos")">@item.NOMEUSUARIO</a>
+                                    <p>
+                                        @item.PERFIL
+                                    </p>
+                                </div>
+                            </li>   
+                        }
+                    </ul>
+                </div>
+                <div class="highlight-toolbar bottom">
+                    <div class="pull-left">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <ul class="pagination pagination-custom">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-angle-double-left"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-angle-double-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <span>Showing results
+							    <strong>1-25</strong>of
+							    <strong>348</strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

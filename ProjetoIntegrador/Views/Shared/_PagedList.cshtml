@@ -1,0 +1,31 @@
+﻿@using PagedList.Mvc;
+
+<div class="highlight-toolbar">
+    <div class="pull-left">
+        <div class="btn-toolbar">
+            <div class="btn-group text">
+                Página
+				<strong>@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)</strong>
+                de <strong>@Model.PageCount</strong>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                @if (Model.HasNextPage)
+                {
+                    <a href="@Url.Action("Index", "Amigos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" class="btn">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                }
+                @if (Model.HasNextPage)
+                {        
+                    <a href="@Url.Action("Index", "Amigos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" class="btn">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

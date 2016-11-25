@@ -1,0 +1,90 @@
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\ProjetoIntegrador.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\ProjetoIntegrador.pdb
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\Antlr3.Runtime.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\EntityFramework.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\Microsoft.Web.Infrastructure.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\Newtonsoft.Json.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.Mvc.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.Optimization.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.Providers.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.Razor.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.WebPages.Deployment.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.WebPages.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.WebPages.Razor.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\WebGrease.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\EntityFramework.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\Newtonsoft.Json.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.Mvc.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.Razor.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.WebPages.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.WebPages.Deployment.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\System.Web.WebPages.Razor.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.csprojResolveAssemblyReference.cache
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.pdb
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\PagedList.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\PagedList.Mvc.dll
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\PagedList.xml
+c:\users\luiz.pereira\documents\visual studio 2012\Projects\ProjetoIntegrador\ProjetoIntegrador\bin\PagedList.Mvc.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\ProjetoIntegrador.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\ProjetoIntegrador.pdb
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\Antlr3.Runtime.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\EntityFramework.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\Newtonsoft.Json.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.Mvc.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Net.Http.Formatting.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Http.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Http.WebHost.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Mvc.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Optimization.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Providers.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Razor.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Razor.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\WebGrease.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.Mvc.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\EntityFramework.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\Newtonsoft.Json.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Net.Http.Formatting.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Http.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Http.WebHost.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Mvc.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Razor.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Razor.xml
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.csprojResolveAssemblyReference.cache
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.dll
+C:\Users\DeskZLF\Desktop\projetointegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.pdb
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\ProjetoIntegrador.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\ProjetoIntegrador.pdb
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\Antlr3.Runtime.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\EntityFramework.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\Newtonsoft.Json.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.Mvc.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Mvc.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Optimization.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Providers.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Razor.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Deployment.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Razor.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\WebGrease.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\PagedList.Mvc.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\EntityFramework.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\Newtonsoft.Json.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Mvc.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.Razor.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Deployment.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\bin\System.Web.WebPages.Razor.xml
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.csprojResolveAssemblyReference.cache
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.dll
+C:\Users\luiz.pereira\Desktop\projetointegrador\ProjetoIntegrador\obj\Debug\ProjetoIntegrador.pdb

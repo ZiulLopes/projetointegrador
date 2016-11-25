@@ -1,0 +1,20 @@
+﻿<div id="navigation" class="navbar-fixed-top">
+	<div class="container-fluid">
+		<a href="@Url.Action("Index", "Home")" id="brand">allShare</a>
+		<a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Esconder Menu">
+		<i class="fa fa-bars"></i>
+		</a>
+		<ul class='main-nav'>
+			<!--
+			<li class='active'>
+				<a href="index.html">
+					<span>Dashboard</span>
+				</a>
+			</li>
+			<li>
+			-->
+		</ul>
+		<!-- #include file="user-drop.asp" -->
+        @Html.Partial("_UserDropMenu")
+	</div>
+</div>
