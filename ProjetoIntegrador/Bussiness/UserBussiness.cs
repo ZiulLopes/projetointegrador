@@ -20,7 +20,7 @@ namespace ProjetoIntegrador.Bussiness
                 {
                     return nome;
                 }
-                return "Erro";
+                return "Erro!";
             }
         }
 
