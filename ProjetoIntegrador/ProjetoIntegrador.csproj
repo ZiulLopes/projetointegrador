@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bussiness\FileBussiness.cs" />
+    <Compile Include="Bussiness\FriendBussiness.cs" />
     <Compile Include="Bussiness\UserBussiness.cs" />
     <Compile Include="Controllers\AmigosController.cs" />
     <Compile Include="Controllers\ArquivosController.cs" />
@@ -160,6 +161,7 @@
     <Content Include="ImagesUploaded\14708375.jpg" />
     <Content Include="Scripts\css\all.css" />
     <Content Include="Scripts\css\bootstrap.min.css" />
+    <Content Include="Scripts\css\cropper.min.css" />
     <Content Include="Scripts\css\jquery-ui.min.css" />
     <Content Include="Scripts\css\jquery.fileupload.css" />
     <Content Include="Scripts\css\plugins\all.css" />
@@ -210,6 +212,7 @@
     <Content Include="Scripts\js\application.min.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="Scripts\css\colorbox.css" />
+    <Content Include="Scripts\js\cropper.min.js" />
     <Content Include="Scripts\js\demonstration.min.js" />
     <Content Include="Scripts\js\eakroko.min.js" />
     <Content Include="Scripts\js\jquery-1.7.1.js" />

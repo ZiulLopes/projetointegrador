@@ -1,4 +1,5 @@
 ﻿@model PagedList.PagedList<ProjetoIntegrador.Models.usuario>
+@using ProjetoIntegrador.Bussiness;
 <div class="row">
     <div class="col-sm-12">
         <div class="box box-color box-bordered">
@@ -15,10 +16,10 @@
                         {
                             <li>
                                 <div class="thumbnail">
-                                    <img src="~/Scripts/img/user-4.jpg" alt="">
+                                    <img src="@item.PATHIMAGEM" alt="" style="width:84px;height:84px">
                                 </div>
                                 <div class="search-info">
-                                    <a href="@Url.Action("AmigoInfo", "Amigos")">@item.NOMEUSUARIO</a>
+                                    <a href="@Url.Action("AmigoInfo", "Amigos")/@item.IDUSUARIO">@item.NOMEUSUARIO</a>
                                     <p>
                                         @item.PERFIL
                                     </p>

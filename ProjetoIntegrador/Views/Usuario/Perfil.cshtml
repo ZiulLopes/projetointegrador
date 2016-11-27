@@ -1,4 +1,5 @@
-﻿<div class="m-t-20 page-header">
+﻿@model ProjetoIntegrador.Models.usuario
+<div class="m-t-20 page-header">
     <!--
 			<div class="pull-left">
 				<h1>Dashboard</h1>
@@ -36,23 +37,25 @@
                         <a href="#profile" data-toggle="tab">
                             <i class="fa fa-user"></i>Perfil</a>
                     </li>
-                    <li class="">
+                    @*<li class="">
                         <a href="#notifications" data-toggle="tab">
                             <i class="fa fa-bullhorn"></i>Notifications</a>
                     </li>
                     <li class="">
                         <a href="#security" data-toggle="tab">
                             <i class="fa fa-lock"></i>Security</a>
-                    </li>
+                    </li>*@
                 </ul>
                 <div class="tab-content padding tab-content-inline tab-content-bottom">
                     <div class="tab-pane active" id="profile">
-                        <form action="#" class="form-horizontal">
+                        @using (Html.BeginForm("Perfil", "Usuario", FormMethod.Post, new { @class = "form-horizontal" }))
+                        {
+                            @Html.HiddenFor(model => model.IDUSUARIO)
                             <div class="row">
                                 <div class="col-sm-2">
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 84px; height: 84px;">
-                                            <img src="~/Scripts/img/user-2.jpg" alt="">
+                                            <img src="@Model.PATHIMAGEM" alt="" style="width: 74px; height: 74px;">
                                         </div>
                                         <div>
                                             <span class="btn btn-default btn-file">
@@ -68,55 +71,74 @@
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Nome:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" value="John Doe">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name" class="control-label col-sm-2 right">Nome:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" value="John Doe">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name" class="control-label col-sm-2 right">Nome:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" value="John Doe">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name" class="control-label col-sm-2 right">Nome:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" value="John Doe">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name" class="control-label col-sm-2 right">Nome:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" value="John Doe">
+                                            @Html.TextBoxFor(model => model.NOMEUSUARIO, new { @class="form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="control-label col-sm-2 right">Email:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="email" class="form-control" value="j.doe@johndoeemail.com">
+                                            @Html.TextBoxFor(model => model.EMAILUSUARIO, new { @class="form-control" })
                                             @*<div class="form-button">
                                                 <a href="#" class="btn btn-grey-4 change-input">Change</a>
                                             </div>*@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="pw" class="control-label col-sm-2 right">Senha:</label>
+                                        <label for="name" class="control-label col-sm-2 right">Telefone:</label>
                                         <div class="col-sm-10">
-                                            <input type="password" name="pw" class="form-control" value="********">
+                                            @Html.TextBoxFor(model => model.TELEFONEUSUARIO, new { @class="form-control" })
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="name" class="control-label col-sm-2 right">Sexo:</label>
+                                        <div class="col-sm-10">
+											<div class="checkbox">
+												<label>
+													@*<input type="checkbox" name="@Model.SEXOUSUARIO" value="@(Model.SEXOUSUARIO != "" ? Model.SEXOUSUARIO : "")"> Masculino*@
+                                                    @Html.RadioButtonFor(model => model.SEXOUSUARIO, "M") Masculino
+												</label>
+											</div>
+											<div class="checkbox">
+												<label>
+													@*<input type="checkbox" name="@Model.SEXOUSUARIO" value="@(Model.SEXOUSUARIO != "" ? Model.SEXOUSUARIO : "")"> Feminino*@
+                                                    @Html.RadioButtonFor(model => model.SEXOUSUARIO, "F") Feminino
+												</label>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pw" class="control-label col-sm-2 right">Senha:</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" name="SENHAUSUARIO" value="@(Model.SENHAUSUARIO != "" ? Model.SENHAUSUARIO : "")" class="form-control" />
+                                            @*@Html.PasswordFor(model => model.SENHAUSUARIO, new { @class="form-control" })*@
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="control-label col-sm-2 right">Perfil:</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextAreaFor(model => model.PERFIL, new { @class="form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="control-label col-sm-2 right">Objetivo:</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextAreaFor(model => model.OBJETIVO, new { @class="form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="control-label col-sm-2 right">Sobre mim:</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextAreaFor(model => model.SOBREMIM, new { @class="form-control" })
+                                        </div>
+                                    </div>
+                                    
                                     <div class="form-actions">
                                         <input type="submit" class="btn btn-primary" value="Salvar">
                                         @*<input type="reset" class="btn" value="Resetar">*@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        }
                     </div>
                     <!--
 									<div class="tab-pane" id="notifications">

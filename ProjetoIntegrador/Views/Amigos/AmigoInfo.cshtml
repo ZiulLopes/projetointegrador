@@ -1,11 +1,13 @@
-﻿<div class="row">
+﻿@model ProjetoIntegrador.Models.usuario
+@using ProjetoIntegrador.Bussiness;
+<div class="row">
     <div class="col-sm-12">
         <div class="box">
             <div class="box-content">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="~/Scripts/img/7.jpg" class="colorbox-image big cboxElement">
-                            <img src="~/Scripts/img/7.jpg" alt="">
+                        <a href="@Model.PATHIMAGEM" class="colorbox-image big cboxElement">
+                            <img src="@Model.PATHIMAGEM" alt="" style="width:329px;height:229px">
                         </a>
                         <!--
                         <div class="more-images">
@@ -36,14 +38,14 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="product-details">
-                            <h4>Nome do seu amigo</h4>
+                            <h4>@Model.NOMEUSUARIO</h4>
                             <div class="price">
-                                çfsdjçklfjsdjfsdjfsdjfljsdkfjç
+                                @Model.EMAILUSUARIO
                             </div>
                             <div class="actions">
-                                @if (true)
+                                @if (!FriendBussiness.IsFriend(Model.IDUSUARIO))
                                 {
-                                    <a href="#" class="btn btn-large btn-success">Adicionar aos amigos</a>
+                                    <a href="#" class="btn btn-large btn-success">Adicionar</a>
                                 }
                                 else
                                 {
@@ -70,19 +72,13 @@
                             </ul>
                             <div class="tab-content padding tab-content-inline tab-content-bottom">
                                 <div class="tab-pane active" id="pro">
-                                    Lorem ipsum Sed eiusmod eiusmod eu dolore qui ut sit sit sint elit tempor irure. Lorem ipsum Irure veniam non ea aliqua laboris et voluptate. Lorem ipsum Amet enim nisi pariatur sit consequat occaecat non. Lorem ipsum Reprehenderit dolor aliquip
-													nostrud sunt deserunt dolor ad veniam.
+                                    @Model.OBJETIVO
                                 </div>
                                 <div class="tab-pane" id="info">
-                                    Lorem ipsum Dolore magna Duis quis tempor eiusmod ut. Lorem ipsum Non pariatur enim mollit minim aliquip adipisicing do fugiat sit enim veniam ea. Lorem ipsum Pariatur aliqua amet dolore cillum culpa minim. Lorem ipsum Laborum sed dolor adipisicing
-													exercitation ea Excepteur sed dolore. Lorem ipsum Anim veniam id exercitation dolore incididunt aute nulla. Lorem ipsum Duis consectetur magna non nostrud laborum incididunt. Lorem ipsum Incididunt labore do non ut ut Excepteur. Lorem ipsum
-													Ut enim ex dolore quis non deserunt.
+                                    @Model.PERFIL
                                 </div>
                                 <div class="tab-pane" id="rev">
-                                    Lorem ipsum Veniam quis voluptate officia magna velit tempor exercitation elit nisi consequat officia in. Lorem ipsum Adipisicing ut voluptate aliqua elit reprehenderit incididunt aliquip sint quis. Lorem ipsum Commodo incididunt minim ex
-													consequat irure sit reprehenderit exercitation et proident velit. Lorem ipsum Veniam qui nostrud in minim Excepteur mollit cupidatat cupidatat cillum dolor Excepteur adipisicing. Lorem ipsum Amet culpa consequat eu ex ut Excepteur amet. Lorem
-													ipsum Dolore ut ut pariatur irure consequat in Excepteur quis laboris est minim. Lorem ipsum Do nisi quis est aliqua dolore adipisicing deserunt. Lorem ipsum Ut laboris minim Excepteur exercitation proident qui anim fugiat in non et deserunt.
-													Lorem ipsum In magna dolore do pariatur nostrud dolore et ut.
+                                    @Model.SOBREMIM
                                 </div>
                             </div>
                         </div>

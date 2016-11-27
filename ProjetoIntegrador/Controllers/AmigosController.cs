@@ -42,7 +42,8 @@ namespace ProjetoIntegrador.Controllers
         // GET: /Amigos/AmigoInfo
         public ActionResult AmigoInfo(int? id)
         {
-            return View();
+            var amigo = dbcontext.usuarios.Find(id);
+            return View(amigo);
         }
 
         //
