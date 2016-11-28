@@ -1,4 +1,49 @@
 ﻿@model ProjetoIntegrador.Models.usuario
+
+<style>
+    body { background-color: #fcfcfc; }
+
+    .avatar-view { display: block; margin: 15% auto 5%; height: 220px; width: 220px; border: 3px solid #fff; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,.15); cursor: pointer; overflow: hidden; }
+
+        .avatar-view img { width: 100%; }
+
+    .avatar-body { padding-right: 15px; padding-left: 15px; }
+
+    .avatar-upload { overflow: hidden; }
+
+        .avatar-upload label { display: block; float: left; clear: left; width: 100px; }
+
+        .avatar-upload input { display: block; margin-left: 110px; }
+
+    .avatar-alert { margin-top: 10px; margin-bottom: 10px; }
+
+    .avatar-wrapper { height: 364px; width: 100%; margin-top: 15px; box-shadow: inset 0 0 5px rgba(0,0,0,.25); background-color: #fcfcfc; overflow: hidden; }
+
+        .avatar-wrapper img { display: block; height: auto; max-width: 100%; }
+
+    .avatar-preview { float: left; margin-top: 15px; margin-right: 15px; border: 1px solid #eee; border-radius: 4px; background-color: #fff; overflow: hidden; }
+
+        .avatar-preview:hover { border-color: #ccf; box-shadow: 0 0 5px rgba(0,0,0,.15); }
+
+        .avatar-preview img { width: 100%; }
+
+    .preview-lg { height: 184px; width: 184px; margin-top: 15px; }
+
+    .preview-md { height: 100px; width: 100px; }
+
+    .preview-sm { height: 50px; width: 50px; }
+
+    @@media (min-width: 992px) {
+        .avatar-preview { float: none; }
+    }
+
+    .avatar-btns { margin-top: 30px; margin-bottom: 15px; }
+
+        .avatar-btns .btn-group { margin-right: 5px; }
+
+    .loading { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: #fff url("../img/loading.gif") no-repeat center center; opacity: .75; filter: alpha(opacity=75); z-index: 20140628; }
+</style>
+
 <div class="m-t-20 page-header">
     <!--
 			<div class="pull-left">
@@ -65,19 +110,25 @@
                                             </span>
                                             <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                         </div>
+                                        <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+                                            <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
+                                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Import image with Blob URLs">
+                                                <span class="fa fa-upload"></span>
+                                            </span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Nome:</label>
                                         <div class="col-sm-10">
-                                            @Html.TextBoxFor(model => model.NOMEUSUARIO, new { @class="form-control" })
+                                            @Html.TextBoxFor(model => model.NOMEUSUARIO, new { @class = "form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="control-label col-sm-2 right">Email:</label>
                                         <div class="col-sm-10">
-                                            @Html.TextBoxFor(model => model.EMAILUSUARIO, new { @class="form-control" })
+                                            @Html.TextBoxFor(model => model.EMAILUSUARIO, new { @class = "form-control" })
                                             @*<div class="form-button">
                                                 <a href="#" class="btn btn-grey-4 change-input">Change</a>
                                             </div>*@
@@ -86,25 +137,25 @@
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Telefone:</label>
                                         <div class="col-sm-10">
-                                            @Html.TextBoxFor(model => model.TELEFONEUSUARIO, new { @class="form-control" })
+                                            @Html.TextBoxFor(model => model.TELEFONEUSUARIO, new { @class = "form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Sexo:</label>
                                         <div class="col-sm-10">
-											<div class="checkbox">
-												<label>
-													@*<input type="checkbox" name="@Model.SEXOUSUARIO" value="@(Model.SEXOUSUARIO != "" ? Model.SEXOUSUARIO : "")"> Masculino*@
+                                            <div class="checkbox">
+                                                <label>
+                                                    @*<input type="checkbox" name="@Model.SEXOUSUARIO" value="@(Model.SEXOUSUARIO != "" ? Model.SEXOUSUARIO : "")"> Masculino*@
                                                     @Html.RadioButtonFor(model => model.SEXOUSUARIO, "M") Masculino
-												</label>
-											</div>
-											<div class="checkbox">
-												<label>
-													@*<input type="checkbox" name="@Model.SEXOUSUARIO" value="@(Model.SEXOUSUARIO != "" ? Model.SEXOUSUARIO : "")"> Feminino*@
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    @*<input type="checkbox" name="@Model.SEXOUSUARIO" value="@(Model.SEXOUSUARIO != "" ? Model.SEXOUSUARIO : "")"> Feminino*@
                                                     @Html.RadioButtonFor(model => model.SEXOUSUARIO, "F") Feminino
-												</label>
-											</div>
-										</div>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="pw" class="control-label col-sm-2 right">Senha:</label>
@@ -116,22 +167,22 @@
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Perfil:</label>
                                         <div class="col-sm-10">
-                                            @Html.TextAreaFor(model => model.PERFIL, new { @class="form-control" })
+                                            @Html.TextAreaFor(model => model.PERFIL, new { @class = "form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Objetivo:</label>
                                         <div class="col-sm-10">
-                                            @Html.TextAreaFor(model => model.OBJETIVO, new { @class="form-control" })
+                                            @Html.TextAreaFor(model => model.OBJETIVO, new { @class = "form-control" })
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Sobre mim:</label>
                                         <div class="col-sm-10">
-                                            @Html.TextAreaFor(model => model.SOBREMIM, new { @class="form-control" })
+                                            @Html.TextAreaFor(model => model.SOBREMIM, new { @class = "form-control" })
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-actions">
                                         <input type="submit" class="btn btn-primary" value="Salvar">
                                         @*<input type="reset" class="btn" value="Resetar">*@
@@ -202,3 +253,106 @@
         </div>
     </div>
 </div>
+
+@*<div class="img-container">
+    <img id="image" src="img/picture.jpg" alt="Picture" class="cropper-hidden"><div class="cropper-container cropper-bg" style="width: 698px; height: 516px;">
+        <div class="cropper-wrap-box">
+            <div class="cropper-canvas" style="width: 698px; height: 392.625px; left: 0px; top: 61.6875px;">
+                <img src="https://fengyuanchen.github.io/cropper/img/picture.jpg" style="width: 698px; height: 392.625px; margin-left: 0px; margin-top: 0px; transform: none;"></div>
+        </div>
+        <div class="cropper-drag-box cropper-modal cropper-crop"></div>
+        <div class="cropper-crop-box" style="width: 558.4px; height: 314.1px; left: 69.8px; top: 79.0456px;"><span class="cropper-view-box">
+            <img src="https://fengyuanchen.github.io/cropper/img/picture.jpg" style="width: 698px; height: 392.625px; margin-left: -69.8px; margin-top: -17.3581px; transform: none;"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face cropper-move"></span><span class="cropper-line line-e" data-action="e"></span><span class="cropper-line line-n" data-action="n"></span><span class="cropper-line line-w" data-action="w"></span><span class="cropper-line line-s" data-action="s"></span><span class="cropper-point point-e" data-action="e"></span><span class="cropper-point point-n" data-action="n"></span><span class="cropper-point point-w" data-action="w"></span><span class="cropper-point point-s" data-action="s"></span><span class="cropper-point point-ne" data-action="ne"></span><span class="cropper-point point-nw" data-action="nw"></span><span class="cropper-point point-sw" data-action="sw"></span><span class="cropper-point point-se" data-action="se"></span></div>
+    </div>
+</div>*@
+
+
+<div class="container" id="crop-avatar">
+
+    <!-- Current avatar -->
+    <div class="avatar-view" title="" data-original-title="Change the avatar">
+        <img src="img/picture.jpg" alt="Avatar">
+    </div>
+
+    <!-- Cropping modal -->
+    <div class="modal fade in" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1" style="display: block; padding-left: 17px;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title" id="avatar-modal-label">Change Avatar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar-body">
+
+                            <!-- Upload image and data -->
+                            <div class="avatar-upload">
+                                <input type="hidden" class="avatar-src" name="avatar_src">
+                                <input type="hidden" class="avatar-data" name="avatar_data" value="{&quot;x&quot;:234.1978021978022,&quot;y&quot;:281.31868131868134,&quot;height&quot;:1536,&quot;width&quot;:1536,&quot;rotate&quot;:0}">
+                                <label for="avatarInput">Local upload</label>
+                                <input type="file" class="avatar-input" id="avatarInput" name="avatar_file">
+                            </div>
+
+                            <!-- Crop and preview -->
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="avatar-wrapper">
+                                        <img src="blob:null/49a2bf3b-644f-40d4-a155-cd46c9af3436" class="cropper-hidden"><div class="cropper-container cropper-bg" style="width: 350px; height: 364px;">
+                                            <div class="cropper-wrap-box">
+                                                <div class="cropper-canvas" style="width: 273px; height: 364px; left: 38.5px; top: 0px;">
+                                                    <img src="blob:null/49a2bf3b-644f-40d4-a155-cd46c9af3436" style="width: 273px; height: 364px; margin-left: 0px; margin-top: 0px; transform: none;"></div>
+                                            </div>
+                                            <div class="cropper-drag-box cropper-modal cropper-crop"></div>
+                                            <div class="cropper-crop-box" style="width: 218.4px; height: 218.4px; left: 71.8px; top: 40px;"><span class="cropper-view-box">
+                                                <img src="blob:null/49a2bf3b-644f-40d4-a155-cd46c9af3436" style="width: 273px; height: 364px; margin-left: -33.3px; margin-top: -40px; transform: none;"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face cropper-move"></span><span class="cropper-line line-e" data-action="e"></span><span class="cropper-line line-n" data-action="n"></span><span class="cropper-line line-w" data-action="w"></span><span class="cropper-line line-s" data-action="s"></span><span class="cropper-point point-e" data-action="e"></span><span class="cropper-point point-n" data-action="n"></span><span class="cropper-point point-w" data-action="w"></span><span class="cropper-point point-s" data-action="s"></span><span class="cropper-point point-ne" data-action="ne"></span><span class="cropper-point point-nw" data-action="nw"></span><span class="cropper-point point-sw" data-action="sw"></span><span class="cropper-point point-se" data-action="se"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="avatar-preview preview-lg" style="width: 182px; height: 182px;">
+                                        <img src="blob:null/49a2bf3b-644f-40d4-a155-cd46c9af3436" style="display: block; width: 227.5px; height: 303.333px; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; margin-left: -27.75px; margin-top: -33.3333px; transform: none;"></div>
+                                    <div class="avatar-preview preview-md" style="width: 98px; height: 98px;">
+                                        <img src="blob:null/49a2bf3b-644f-40d4-a155-cd46c9af3436" style="display: block; width: 122.5px; height: 163.333px; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; margin-left: -14.9423px; margin-top: -17.9487px; transform: none;"></div>
+                                    <div class="avatar-preview preview-sm" style="width: 48px; height: 48px;">
+                                        <img src="blob:null/49a2bf3b-644f-40d4-a155-cd46c9af3436" style="display: block; width: 60px; height: 80px; min-width: 0px !important; min-height: 0px !important; max-width: none !important; max-height: none !important; margin-left: -7.31868px; margin-top: -8.79121px; transform: none;"></div>
+                                </div>
+                            </div>
+
+                            <div class="row avatar-btns">
+                                <div class="col-md-9">
+                                    <!--
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-90" title="Rotate -90 degrees">Rotate Left</button>
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-15">-15deg</button>
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-30">-30deg</button>
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45">-45deg</button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="90" title="Rotate 90 degrees">Rotate Right</button>
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="15">15deg</button>
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="30">30deg</button>
+                                        <button type="button" class="btn btn-primary" data-method="rotate" data-option="45">45deg</button>
+                                    </div>
+                                    -->
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary btn-block avatar-save">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal -->
+
+    <!-- Loading state -->
+    <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+</div>
+<div class="modal-backdrop fade in"></div>
+<script src="~/Scripts/js/perfilmain.js"></script>

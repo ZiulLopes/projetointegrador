@@ -238,6 +238,7 @@
     <Content Include="Scripts\js\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\js\knockout-2.1.0.js" />
     <Content Include="Scripts\js\modernizr-2.5.3.js" />
+    <Content Include="Scripts\js\perfilmain.js" />
     <Content Include="Scripts\js\plugins\additional-methods.min.js" />
     <Content Include="Scripts\js\plugins\chosen.jquery.min.js" />
     <Content Include="Scripts\js\plugins\flot\jquery.flot.bar.order.min.js" />
