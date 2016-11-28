@@ -98,7 +98,7 @@
                             @Html.HiddenFor(model => model.IDUSUARIO)
                             <div class="row">
                                 <div class="col-sm-2">
-                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput fileinput-new avatar-view" data-provides="fileinput" data-original-title="Change the avatar">
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 84px; height: 84px;">
                                             <img src="@Model.PATHIMAGEM" alt="" style="width: 74px; height: 74px;">
                                         </div>
@@ -275,7 +275,7 @@
     </div>
 
     <!-- Cropping modal -->
-    <div class="modal fade in" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1" style="display: block; padding-left: 17px;">
+    <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1" style="display: none; padding-left: 17px;">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post">
@@ -354,5 +354,5 @@
     <!-- Loading state -->
     <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
 </div>
-<div class="modal-backdrop fade in"></div>
+
 <script src="~/Scripts/js/perfilmain.js"></script>
