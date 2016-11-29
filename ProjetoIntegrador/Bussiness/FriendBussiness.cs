@@ -19,5 +19,11 @@ namespace ProjetoIntegrador.Bussiness
             }
             return false;
         }
+
+        public static amigo ReturnFriendship(int id)
+        {
+            var amizade = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser && x.IDUSUARIO2 == id).FirstOrDefault();
+            return amizade;
+        }
     }
 }

@@ -13,16 +13,16 @@ namespace ProjetoIntegrador.Controllers
 {
     public class AmigosController : Controller
     {
-		// Context for base test
+        // Context for base test
         projetointegradorContext dbcontext = new projetointegradorContext();
-        
+
         //
         // GET: /Amigos/Index
         public ActionResult Index(int? page)
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            
+
             var myamigos = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser).ToList();
 
             return View(myamigos.ToPagedList(pageNumber, pageSize));
@@ -32,7 +32,7 @@ namespace ProjetoIntegrador.Controllers
         // POST: /Amigos/ListAmigos
         public ActionResult ListAmigos(string searching, int? page)
         {
-            int pageSize = 3;
+            int pageSize = 15;
             int pageNumber = (page ?? 1);
             var listusers = dbcontext.usuarios.Where(x => x.IDUSUARIO != UserBussiness.IdUser && x.ATIVO == true).ToList();
             return View(listusers.ToPagedList(pageNumber, pageSize));
@@ -52,5 +52,47 @@ namespace ProjetoIntegrador.Controllers
         {
             return View();
         }
+
+        #region Methods
+
+        //
+        // POST: /Amigos/AdcionarAmizade
+        public void AdcionarAmizade(int id)
+        {
+            try
+            {
+                amigo amizade = new amigo();
+                amizade.IDUSUARIO1 = UserBussiness.IdUser;
+                amizade.IDUSUARIO2 = id;
+                amizade.ATIVO = true;
+                dbcontext.amigoes.Add(amizade);
+                dbcontext.SaveChanges();
+            }
+            catch (Exception error)
+            {
+                throw new Exception();
+            }
+        }
+
+        //
+        // POST: /Amigos/ExcluirAmizade
+        public void ExcluirAmizade(int id)
+        {
+            try
+            {
+                var amigo = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser && x.IDUSUARIO2 == id).FirstOrDefault();
+                if (amigo != null)
+                {
+                    amigo.ATIVO = false;
+                    dbcontext.SaveChanges();
+                }
+            }
+            catch (Exception error)
+            {
+                throw new Exception();
+            }
+        }
+
+        #endregion
     }
 }

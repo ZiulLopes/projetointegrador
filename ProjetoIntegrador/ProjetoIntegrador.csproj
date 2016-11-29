@@ -159,6 +159,7 @@
     <Content Include="ImagesUploaded\10272575.jpg" />
     <Content Include="ImagesUploaded\14650674.jpg" />
     <Content Include="ImagesUploaded\14708375.jpg" />
+    <Content Include="Scripts\css\alertify.css" />
     <Content Include="Scripts\css\all.css" />
     <Content Include="Scripts\css\bootstrap.min.css" />
     <Content Include="Scripts\css\cropper.min.css" />
@@ -210,7 +211,9 @@
     <Content Include="Scripts\img\user-6.jpg" />
     <Content Include="Scripts\img\user-avatar.jpg" />
     <Content Include="Scripts\js\additional-methods.min.js" />
+    <Content Include="Scripts\js\alertify.js" />
     <Content Include="Scripts\js\application.min.js" />
+    <Content Include="Scripts\js\app.main.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="Scripts\css\colorbox.css" />
     <Content Include="Scripts\js\cropper.min.js" />

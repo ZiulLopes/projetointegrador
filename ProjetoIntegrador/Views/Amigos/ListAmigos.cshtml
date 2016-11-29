@@ -33,19 +33,19 @@
                         <div class="btn-toolbar">
                             <div class="btn-group">
                                 <ul class="pagination pagination-custom">
-                                    @if (Model.HasNextPage)
-                                    {
-                                        <li>
-                                            <a href="@Url.Action("ListAmigos", "Amigos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">
-                                                <i class="fa fa-angle-double-right"></i>
-                                            </a>
-                                        </li>
-                                    }
                                     @if (Model.HasPreviousPage)
                                     {
                                         <li>
                                             <a href="@Url.Action("ListAmigos", "Amigos", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">
                                                 <i class="fa fa-angle-double-left"></i>
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (Model.HasNextPage)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("ListAmigos", "Amigos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">
+                                                <i class="fa fa-angle-double-right"></i>
                                             </a>
                                         </li>
                                     }
