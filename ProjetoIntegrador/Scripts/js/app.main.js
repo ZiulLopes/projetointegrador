@@ -12,6 +12,7 @@
             data: { id: id },
             success: function (data) {
                 alertify.confirm("Amizade confirmada!");
+				$(".actions").load("AmigoInfo .actions");
             },
             error: function (data) {
                 alertify.error("Erro ao adicionar");
@@ -26,6 +27,7 @@
             data: { id: id },
             success: function (data) {
                 alertify.confirm("Amizade excluida!");
+				$(".actions").load("AmigoInfo .actions");
             },
             error: function (data) {
                 alertify.error("Erro ao excluir");
