@@ -209,15 +209,31 @@
         </div>
     </div>
 </div>
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-@*<div class="img-container">
-    <img id="image" src="img/picture.jpg" alt="Picture" class="cropper-hidden"><div class="cropper-container cropper-bg" style="width: 698px; height: 516px;">
-        <div class="cropper-wrap-box">
-            <div class="cropper-canvas" style="width: 698px; height: 392.625px; left: 0px; top: 61.6875px;">
-                <img src="https://fengyuanchen.github.io/cropper/img/picture.jpg" style="width: 698px; height: 392.625px; margin-left: 0px; margin-top: 0px; transform: none;"></div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p><a href="#" id="hl-crop-image">Crop Image</a></p>
+                <p>
+                    <img id="my-origin-image" src="~/Images/funny_cat_v1.jpg" />
+                </p>
+                <p>
+                    <img id="my-cropped-image" src="#" style="display: none;" />
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="cropper-drag-box cropper-modal cropper-crop"></div>
-        <div class="cropper-crop-box" style="width: 558.4px; height: 314.1px; left: 69.8px; top: 79.0456px;"><span class="cropper-view-box">
-            <img src="https://fengyuanchen.github.io/cropper/img/picture.jpg" style="width: 698px; height: 392.625px; margin-left: -69.8px; margin-top: -17.3581px; transform: none;"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face cropper-move"></span><span class="cropper-line line-e" data-action="e"></span><span class="cropper-line line-n" data-action="n"></span><span class="cropper-line line-w" data-action="w"></span><span class="cropper-line line-s" data-action="s"></span><span class="cropper-point point-e" data-action="e"></span><span class="cropper-point point-n" data-action="n"></span><span class="cropper-point point-w" data-action="w"></span><span class="cropper-point point-s" data-action="s"></span><span class="cropper-point point-ne" data-action="ne"></span><span class="cropper-point point-nw" data-action="nw"></span><span class="cropper-point point-sw" data-action="sw"></span><span class="cropper-point point-se" data-action="se"></span></div>
     </div>
-</div>*@
+</div>
