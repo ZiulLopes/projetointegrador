@@ -45,11 +45,11 @@
                             <div class="actions">
                                 @if (!FriendBussiness.IsFriend(Model.IDUSUARIO))
                                 {
-                                    <a href="#" class="btn btn-large btn-success" onclick="AddFriend(@Model.IDUSUARIO)">Adicionar</a>
+                                    <a href="#" class="btn btn-large btn-success" onclick="AddFriend(@Model.IDUSUARIO)">Seguir</a>
                                 }
                                 else
                                 {
-                                    <a href="#" class="btn btn-large btn-danger" onclick="ExcFriend(@Model.IDUSUARIO)">Desfazer amigos</a>                                    
+                                    <a href="#" class="btn btn-large btn-danger" onclick="ExcFriend(@Model.IDUSUARIO)">Ignorar</a>                                    
                                 }
                                 <a href="#" class="btn btn-large btn-primary">Ver arquivos salvos</a>
                             </div>
