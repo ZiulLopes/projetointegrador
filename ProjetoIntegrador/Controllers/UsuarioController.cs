@@ -6,6 +6,10 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using ProjetoIntegrador.Models;
 using ProjetoIntegrador.Bussiness;
+using System.Net;
+using System.Configuration;
+using System.IO;
+using TestImageCrop;
 
 namespace ProjetoIntegrador.Controllers
 {

@@ -140,6 +140,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
     <Compile Include="Models\amigo.cs" />
     <Compile Include="Models\Amigos.cs" />
     <Compile Include="Models\arquivo.cs" />
