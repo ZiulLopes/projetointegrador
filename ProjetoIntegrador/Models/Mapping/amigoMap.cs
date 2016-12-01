@@ -8,7 +8,7 @@ namespace ProjetoIntegrador.Models.Mapping
         public amigoMap()
         {
             // Primary Key
-            this.HasKey(t => new { t.IDUSUARIO1, t.IDUSUARIO2, t.ATIVO });
+            this.HasKey(t => new { t.IDUSUARIO1, t.IDUSUARIO2 });
 
             // Properties
             this.Property(t => t.IDUSUARIO1)
