@@ -4691,6 +4691,7 @@ label, input, button, select, textarea {
   background: #eee;
   width: 100%;
   position: relative;
+  margin-top: 80px !important;
 }
 #footer p {
   padding: 10px 0;

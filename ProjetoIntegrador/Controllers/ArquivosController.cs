@@ -10,6 +10,7 @@ using PagedList;
 
 namespace ProjetoIntegrador.Controllers
 {
+    [Authorize]
     public class ArquivosController : Controller
     {
         projetointegradorContext dbcontext = new projetointegradorContext();

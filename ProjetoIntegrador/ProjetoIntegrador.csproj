@@ -270,7 +270,9 @@
     <Content Include="Scripts\js\plugins\vmap\jquery.vmap.sampledata.js" />
     <Content Include="Scripts\js\plugins\vmap\jquery.vmap.world.js" />
     <Content Include="Scripts\js\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

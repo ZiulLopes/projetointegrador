@@ -1,5 +1,9 @@
 ﻿@model ProjetoIntegrador.Models.usuario
 
+@{
+    string imbpath = Request.QueryString["imbpath"];
+}
+
 <div class="m-t-20 page-header">
     <!--
 			<div class="pull-left">
@@ -227,12 +231,18 @@
                 <p>
                     <img id="my-origin-image" src="@Model.PATHIMAGEM" />
                 </p>
-                <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
-                    <input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">
-                    <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Import image with Blob URLs">
-                        <span class="fa fa-upload"></span>
-                    </span>
-                </label>
+                <p>
+                    <img id="img2" src="" />
+                </p>
+                <form enctype="multipart/form-data" action="/Usuario/UploadImage" method="post" id="formupimg">
+                    <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+                        @*<input type="file" class="sr-only" id="inputImage" name="file" accept="image/*">*@
+                        <input id="imagefile" type="file" name="imagefile" accept="image/*"/>
+                        <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Import image with Blob URLs">
+                            <span class="fa fa-upload" onclick="SubmitButtonOnclick()"></span>
+                        </span>
+                    </label>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -289,11 +299,43 @@
                 imageCropHeight: imageCropHeight
             },
             success: function (data) {
-                $("#my-origin-image")
-                    .attr("src", data.photoPath)
-                    .show();
+                //$("#my-origin-image")
+                //    .attr("src", data.imbpath)
+                //    .show();
+                alertify.confirm("Recortado com sucesso!");
+                setTimeout(function () {
+                    location.reload();
+                }, 1000);
             },
             error: function (data) { }
+        });
+    }
+
+    function SubmitButtonOnclick() {
+        var formData = new FormData();
+        var file = document.getElementById("imagefile").files[0];
+        //var file1 = document.getElementById("coverFile").files[0];
+        formData.append("file", file);
+        //formData.append("coverfile", file1);
+        $.ajax({
+            type: "POST",
+            url: '/Usuario/UploadImage',
+            data: formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                //$("#img2")
+                //    .attr("src", data.imbpath)
+                //    .show();
+                alertify.confirm("Imagem Salva!");
+                setTimeout(function () {
+                    location.reload();
+                }, 1000);
+            },
+            error: function (error) {
+                console.log("error!!");
+            }
         });
     }
 

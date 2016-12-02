@@ -11,9 +11,10 @@ using System.Configuration;
 using System.IO;
 using TestImageCrop;
 
+
 namespace ProjetoIntegrador.Controllers
 {
-
+    [Authorize]
     public class UsuarioController : Controller
     {
         projetointegradorContext dbcontext = new projetointegradorContext();
@@ -96,8 +97,28 @@ namespace ProjetoIntegrador.Controllers
                 return new HttpStatusCodeResult((int)HttpStatusCode.InternalServerError);
             }
 
-            string photoPath = string.Concat("/", ConfigurationManager.AppSettings["Image.TempFolderName"], "/", fileName);
+            string photoPath = string.Concat("/", ConfigurationManager.AppSettings["Image.FolderName"], "/", fileName);
             return Json(new { photoPath = photoPath }, JsonRequestBehavior.AllowGet);
         }
+
+        //
+        // POST: /Usuario/UploadImage
+        [HttpPost]
+        public virtual ActionResult UploadImage(HttpPostedFileBase file)
+        {
+            HttpPostedFileBase postedFile = Request.Files[0];
+
+            Random rnd = new Random();
+            int idImg = rnd.Next(1, 99999999);
+
+            //file.SaveAs(string.Concat("~/", ConfigurationManager.AppSettings["Image.FolderName"], "/", idImg, ".jpg"));
+
+            string imbpath = Server.MapPath(string.Concat("~/", ConfigurationManager.AppSettings["Image.FolderName"], "/", UserBussiness.NameImageFromUser, ".jpg"));
+
+            file.SaveAs(imbpath);
+            
+            return Json(new { imbpath = imbpath }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

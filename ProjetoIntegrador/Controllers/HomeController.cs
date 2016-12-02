@@ -17,6 +17,7 @@ namespace ProjetoIntegrador.Controllers
 
         //
         // GET: /Home/Index
+        [Authorize]
         public ActionResult Index(int? page)
         {
 

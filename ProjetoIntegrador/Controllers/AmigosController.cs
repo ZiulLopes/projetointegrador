@@ -11,6 +11,7 @@ using ProjetoIntegrador.Bussiness;
 
 namespace ProjetoIntegrador.Controllers
 {
+    [Authorize]
     public class AmigosController : Controller
     {
         // Context for base test
