@@ -83,7 +83,7 @@ namespace ProjetoIntegrador.Controllers
             byte[] imageBytes = System.IO.File.ReadAllBytes(Server.MapPath(imagePath));
             byte[] croppedImage = ImageHelper.CropImage(imageBytes, cropPointX.Value, cropPointY.Value, imageCropWidth.Value, imageCropHeight.Value);
 
-            string tempFolderName = Server.MapPath("~/" + ConfigurationManager.AppSettings["Image.TempFolderName"]);
+            string tempFolderName = Server.MapPath("~/" + ConfigurationManager.AppSettings["Image.FolderName"]);
             string fileName = Path.GetFileName(imagePath);
 
             try
