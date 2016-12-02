@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Nov-2016 às 22:12
+-- Generation Time: 02-Dez-2016 às 22:43
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -42,7 +42,10 @@ INSERT INTO `amigo` (`IDUSUARIO1`, `IDUSUARIO2`, `ATIVO`) VALUES
 (3, 1, 1),
 (3, 2, 1),
 (3, 4, 1),
-(2, 3, 1);
+(2, 3, 1),
+(4, 1, 1),
+(4, 3, 1),
+(3, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -121,8 +124,13 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`IDUSUARIO`, `NOMEUSUARIO`, `DATANASCUSUARIO`, `SEXOUSUARIO`, `EMAILUSUARIO`, `SENHAUSUARIO`, `TELEFONEUSUARIO`, `DATACADASTRO`, `ATIVO`, `PATHIMAGEM`, `OBJETIVO`, `PERFIL`, `SOBREMIM`) VALUES
 (1, 'Jhon', '1994-11-08', 'M', 'jhon@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/10272575.jpg', NULL, NULL, ''),
 (2, 'Rodolfo Dona Hosp', '1989-09-17', 'M', 'rod@email.com.br', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/14650674.jpg', NULL, NULL, ''),
-(3, 'Luiz Fernando Lopes', '1991-11-21', 'M', 'lopesluiz_@hotmail.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/11885160.jpg', NULL, NULL, ''),
-(4, 'Felipe Augusto Teixeira Fernandes', '1995-11-09', 'F', 'felipa@email.com.br', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/14708375.jpg', NULL, NULL, '');
+(3, 'Luiz Fernando Lopes', '1991-11-21', 'M', 'lopesluiz_@hotmail.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/11885160.jpg', 'sdfsdf', '"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account o', 'sdfasdfsdfasdfsdfasdfsadfsadf sdfsadfsaddsfsdf'),
+(4, 'Felipe Augusto Teixeira Fernandes', '1995-11-09', 'F', 'felipa@email.com.br', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/14708375.jpg', NULL, NULL, ''),
+(5, 'Eva Luna', '1991-11-21', 'F', 'eva@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/21321231321.jpg', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ip', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui r', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem '),
+(6, 'Bianca Carvalho', '1991-11-21', 'F', 'bianca@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/4654564464.jpg', 'sdfsadfsdfsdfsdafsdf', 'fgadfsff', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem '),
+(7, 'Asshylay Munia', '1991-11-21', 'F', 'ashy123@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/87897979.jpg', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ip', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui r', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem '),
+(8, 'Alicy Email Nome', '1991-11-21', 'F', 'alicya@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/171741717.jpg', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ip', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui r', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem '),
+(9, 'Maria Blinda', '1991-11-21', 'F', 'maria@email.com', 'sys123', '433333333', '2016-11-23 00:00:00', 1, '/ImagesUploaded/4654564464.jpg', '', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui r', 'ae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem ');
 
 --
 -- Indexes for dumped tables
@@ -173,7 +181,7 @@ ALTER TABLE `endereco`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Constraints for dumped tables
 --
