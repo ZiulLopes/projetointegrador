@@ -15,7 +15,6 @@ namespace ProjetoIntegrador.Models.Mapping
                 .HasMaxLength(50);
 
             this.Property(t => t.DESCRICAO)
-                .IsRequired()
                 .HasMaxLength(2000);
 
             this.Property(t => t.PATHARQUIVO)

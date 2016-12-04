@@ -21,13 +21,16 @@ namespace ProjetoIntegrador.Controllers
         public ActionResult Index(int? page)
         {
 
-            int pageSize = 3;
+            int pageSize = 999;
             int pageNumber = (page ?? 1);
 
-            var files = dbcontext.arquivoes.Where(x => x.usuario.amigoes1.FirstOrDefault().IDUSUARIO1 == UserBussiness.IdUser).OrderByDescending(x => x.DATAENVIOARQUIVO).ToList();
+            var users = dbcontext.amigoes.Where(x => x.usuario.IDUSUARIO == UserBussiness.IdUser && x.ATIVO == true).Select(x => x.IDUSUARIO2).ToList();
+
+            int[] ids = users.ToArray();
+
+            var files = dbcontext.arquivoes.Where(x => ids.Contains((int)x.IDUSUARIO)).OrderByDescending(x => x.DATAENVIOARQUIVO).ToList();
 
             return View(files.ToPagedList(pageNumber, pageSize));
-            return View();
         }
 
         //

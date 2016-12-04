@@ -33,7 +33,7 @@
                 <div class="actions">
                     <a href="#" class="btn btn-mini fileinput-button">
                         <i class="fa fa-upload">
-                            <input id="fileupload" type="file" name="files[]" multiple="">
+                            <input id="fileupload" type="file" name="file">
                         </i>
                     </a>
                     <a href="#" class="btn btn-mini content-slideUp">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="box-content nopadding">
-                <table class="table table-hover table-nomargin">
+                <table class="table table-hover table-nomargin" id="tbfiles">
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -57,7 +57,7 @@
                                 <td>@item.NOMEARQUIVO</td>
                                 <td>@item.DATAENVIOARQUIVO</td>
                                 <td class="hidden-350">
-                                    <a href="#"><i class="fa fa-trash"></i></a>   |   <a href="@item.PATHARQUIVO" target="_blank"><i class="fa fa-download"></i></a>
+                                    <a href="#"><i class="fa fa-trash"></i></a>|   <a href="@item.PATHARQUIVO" target="_blank"><i class="fa fa-download"></i></a>
                                 </td>
                             </tr>   
                         }
@@ -77,3 +77,60 @@
         </div>
     </div>
 </div>
+<script>
+
+    var fileupload = document.getElementById("fileupload")
+
+    fileupload.onchange = function () {
+        var formData = new FormData();
+        var file = document.getElementById("fileupload").files[0];
+        formData.append("file", file);
+        $.ajax({
+            type: "POST",
+            url: '/Arquivos/PostFile',
+            data: formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                //$("#img2")
+                //    .attr("src", data.imbpath)
+                //    .show();
+                alertify.success("Arquivo Salvo!");
+                $("#tbfiles").load("Index #tbfiles");
+                //setTimeout(function () {
+                //    location.reload();
+                //}, 1000);
+            },
+            error: function (error) {
+                console.log("error!!");
+                $("#tbfiles").load("Index #tbfiles");
+            }
+        });
+    };
+    //function () {
+    //    var formData = new FormData();
+    //    var file = document.getElementById("fileupload").files[0];
+    //    formData.append("file", file);
+    //    $.ajax({
+    //        type: "POST",
+    //        url: '/Arquivos/Index',
+    //        data: formData,
+    //        dataType: 'json',
+    //        contentType: false,
+    //        processData: false,
+    //        success: function (data) {
+    //            //$("#img2")
+    //            //    .attr("src", data.imbpath)
+    //            //    .show();
+    //            alertify.confirm("Arquivo Salvo!");
+    //            setTimeout(function () {
+    //                location.reload();
+    //            }, 1000);
+    //        },
+    //        error: function (error) {
+    //            console.log("error!!");
+    //        }
+    //    });
+    //};
+</script>

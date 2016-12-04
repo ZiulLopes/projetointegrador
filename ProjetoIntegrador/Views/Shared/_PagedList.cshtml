@@ -16,13 +16,13 @@
                 @if (Model.HasNextPage)
                 {
                     <a href="@Url.Action("Index", "Amigos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" class="btn">
-                        <i class="fa fa-angle-left"></i>
+                        <i class="fa fa-angle-right"></i>
                     </a>
                 }
                 @if (Model.HasPreviousPage)
                 {        
                     <a href="@Url.Action("Index", "Amigos", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })" class="btn">
-                        <i class="fa fa-angle-right"></i>
+                        <i class="fa fa-angle-left"></i>
                     </a>
                 }
             </div>

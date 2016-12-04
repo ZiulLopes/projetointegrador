@@ -21,10 +21,10 @@ namespace ProjetoIntegrador.Controllers
         // GET: /Amigos/Index
         public ActionResult Index(int? page)
         {
-            int pageSize = 3;
+            int pageSize = 15;
             int pageNumber = (page ?? 1);
 
-            var myamigos = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser).ToList();
+            var myamigos = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser && x.ATIVO == true).ToList();
 
             return View(myamigos.ToPagedList(pageNumber, pageSize));
         }
@@ -54,30 +54,41 @@ namespace ProjetoIntegrador.Controllers
             return View();
         }
 
-        #region Methods
 
         //
-        // POST: /Amigos/AdcionarAmizade
-        public void AdcionarAmizade(int id)
+        // GET: /Amigos/AmigoInfo
+        public ActionResult AdcionarAmizade(int id)
         {
-            try
+            var amigo = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser && x.IDUSUARIO2 == id).FirstOrDefault();
+            if (amigo != null)
             {
-                amigo amizade = new amigo();
-                amizade.IDUSUARIO1 = UserBussiness.IdUser;
-                amizade.IDUSUARIO2 = id;
-                amizade.ATIVO = true;
-                dbcontext.amigoes.Add(amizade);
+                amigo.ATIVO = true;
                 dbcontext.SaveChanges();
             }
-            catch (Exception error)
+            else
             {
-                throw new Exception();
+                try
+                {
+                    amigo amizade = new amigo();
+                    amizade.IDUSUARIO1 = UserBussiness.IdUser;
+                    amizade.IDUSUARIO2 = id;
+                    amizade.ATIVO = true;
+                    dbcontext.amigoes.Add(amizade);
+                    dbcontext.SaveChanges();
+                }
+                catch (Exception error)
+                {
+                    throw new Exception();
+                }
             }
+
+            return RedirectToAction("AmigoInfo", new { id = id });
         }
 
+
         //
-        // POST: /Amigos/ExcluirAmizade
-        public void ExcluirAmizade(int id)
+        // GET: /Amigos/ExcluirAmizade
+        public ActionResult ExcluirAmizade(int id)
         {
             try
             {
@@ -92,8 +103,8 @@ namespace ProjetoIntegrador.Controllers
             {
                 throw new Exception();
             }
-        }
 
-        #endregion
+            return RedirectToAction("AmigoInfo", new { id = id });
+        }
     }
 }

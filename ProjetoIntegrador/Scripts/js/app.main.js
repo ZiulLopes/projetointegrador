@@ -16,6 +16,7 @@
             },
             error: function (data) {
                 alertify.error("Erro ao adicionar");
+                $(".actions").load("AmigoInfo .actions");
             }
         });
     }
@@ -31,6 +32,8 @@
             },
             error: function (data) {
                 alertify.error("Erro ao excluir");
+                $(".actions").load("AmigoInfo .actions");
+
             }
         });
     }

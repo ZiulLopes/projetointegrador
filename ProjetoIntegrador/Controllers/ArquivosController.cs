@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using PagedList;
+using System.Configuration;
 
 namespace ProjetoIntegrador.Controllers
 {
@@ -33,6 +34,41 @@ namespace ProjetoIntegrador.Controllers
         {
             var file = dbcontext.arquivoes.Where(x => x.IDARQUIVO == id && x.ATIVO == true).FirstOrDefault();
             return View(file);
+        }
+
+        //
+        // GET: /Arquivos/Create
+        [HttpPost]
+        public void PostFile(arquivo arquivoContext)
+        {
+            HttpPostedFileBase file = Request.Files[0];
+
+            if (file.ContentLength > 60000000)
+            {
+                //return RedirectToAction("ArquivoInfo", new { msg = "Arquivo maior que 50 mb" });
+                throw new Exception();
+            }
+            else
+            {
+                try
+                {
+                    string filepath = string.Concat("/", ConfigurationManager.AppSettings["File.FolderName"], "/", file.FileName);
+                    file.SaveAs(Server.MapPath(filepath));
+
+                    arquivoContext.PATHARQUIVO = filepath;
+                    arquivoContext.ATIVO = true;
+                    arquivoContext.NOMEARQUIVO = file.FileName;
+                    arquivoContext.IDUSUARIO = UserBussiness.IdUser;
+                    arquivoContext.DATAENVIOARQUIVO = DateTime.Now;
+                    dbcontext.arquivoes.Add(arquivoContext);
+                    dbcontext.SaveChanges();
+                }
+                catch (Exception error)
+                {
+                    throw new Exception();
+                    error.Message.ToString();
+                }
+            }
         }
     }
 }
