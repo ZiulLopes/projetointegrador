@@ -51,7 +51,7 @@
                                 {
                                     <a href="@Url.Action("ExcluirAmizade", "Amigos")/@Model.IDUSUARIO" class="btn btn-large btn-danger" onclick="ExcFriend(@Model.IDUSUARIO)">Ignorar</a>                                    
                                 }
-                                <a href="#" class="btn btn-large btn-primary">Ver arquivos salvos</a>
+                                <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-large btn-primary">Ver arquivos salvos</a>
                             </div>
                         </div>
                     </div>
@@ -84,6 +84,79 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Arquivos @Model.NOMEUSUARIO</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box box-color box-bordered">
+                            <div class="box-title">
+                                <h3>
+                                    <i class="fa fa-table"></i>
+                                    Arquivos Uploaded
+                                </h3>
+                                @*<div class="actions">
+                                    <a href="#" class="btn btn-mini fileinput-button">
+                                        <i class="fa fa-upload">
+                                            <input id="fileupload" type="file" name="file">
+                                        </i>
+                                    </a>
+                                    <a href="#" class="btn btn-mini content-slideUp">
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                </div>*@
+                            </div>
+                            <div class="box-content nopadding">
+                                <table class="table table-hover table-nomargin" id="tbfiles">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Data</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.Files)
+                                        {
+                                            <tr>
+                                                <td>@item.NOMEARQUIVO</td>
+                                                <td>@item.DATAENVIOARQUIVO</td>
+                                                <td class="hidden-350">
+                                                    <a href="@item.PATHARQUIVO" target="_blank"><i class="fa fa-download"></i></a>
+                                                </td>
+                                            </tr>   
+                                        }
+                                    </tbody>
+                                </table>
+                                <div class="table-pagination">
+                                    @*@if (Model.HasPreviousPage)
+                    {
+                        <a href="@Url.Action("Index", "Arquivos", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })"><<</a>
+                    }
+                    @if (Model.HasNextPage)
+                    {
+                        <a href="@Url.Action("Index", "Arquivos", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })">>></a>
+                    }*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>

@@ -44,6 +44,10 @@ namespace ProjetoIntegrador.Controllers
         public ActionResult AmigoInfo(int? id)
         {
             var amigo = dbcontext.usuarios.Find(id);
+
+            List<arquivo> filesList = dbcontext.arquivoes.Where(x => x.IDUSUARIO == id).ToList();
+            ViewBag.Files = filesList;
+
             return View(amigo);
         }
 
