@@ -12,7 +12,7 @@ namespace ProjetoIntegrador.Bussiness
 
         public static Boolean IsFriend(int id)
         {
-            var exist = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser && x.IDUSUARIO2 == id).FirstOrDefault();
+            var exist = dbcontext.amigoes.Where(x => x.IDUSUARIO1 == UserBussiness.IdUser && x.IDUSUARIO2 == id && x.ATIVO == true).FirstOrDefault();
             if (exist != null)
             {
                 return true;
