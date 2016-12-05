@@ -53,7 +53,7 @@ namespace ProjetoIntegrador.Bussiness
         {
             get
             {
-                return dbcontext.usuarios.Find(IdUser).PATHIMAGEM.Replace("/ImagesUploaded/","").Replace(".jpg","").Replace(".gif","").Replace("png","");
+                return dbcontext.usuarios.Find(IdUser).PATHIMAGEM.Replace("/ImagesUploaded/","").Replace(".jpg","").Replace(".gif","").Replace(".png","");
             }
         }
     }

@@ -104,6 +104,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label for="name" class="control-label col-sm-2 right">Data de Nascimento:</label>
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(model => model.DATANASCUSUARIO, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name" class="control-label col-sm-2 right">Sexo:</label>
                                         <div class="col-sm-10">
                                             <div class="checkbox">
@@ -250,6 +256,7 @@
         </div>
     </div>
 </div>
+@Html.Partial("_Message")
 <script type="text/javascript">
     var imageCropWidth = 0;
     var imageCropHeight = 0;
@@ -307,7 +314,9 @@
                     location.reload();
                 }, 1000);
             },
-            error: function (data) { }
+            error: function (data) {
+                location.reload();
+            }
         });
     }
 

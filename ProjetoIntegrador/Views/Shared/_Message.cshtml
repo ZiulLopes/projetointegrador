@@ -1,0 +1,29 @@
+﻿@{
+    try
+    {
+        var msg = Request.QueryString["msg"].ToString();
+        switch (msg)
+        {
+            case "loginerro":
+    <script>
+        alertify.error("Login ou Senha inválido");
+    </script>
+                break;
+            case "salvo":
+    <script>
+        alertify.success("Salvo com sucesso");
+    </script>
+                break;
+            case "filerm":
+    <script>
+        alertify.success("Arquivo removido com sucesso!");
+    </script>
+                break;
+            default:
+                break;
+        }
+    }
+    catch (Exception)
+    {
+    }
+}

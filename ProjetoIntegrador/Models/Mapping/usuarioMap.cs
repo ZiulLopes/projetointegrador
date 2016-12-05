@@ -38,7 +38,6 @@ namespace ProjetoIntegrador.Models.Mapping
                 .HasMaxLength(500);
 
             this.Property(t => t.SOBREMIM)
-                .IsRequired()
                 .HasMaxLength(500);
 
             // Table & Column Mappings

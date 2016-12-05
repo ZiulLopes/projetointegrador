@@ -33,28 +33,61 @@
                             <i class="fa fa-th-list"></i>Cadastre-se</h3>
                     </div>
                     <div class="box-content nopadding">
-                        <form action="#" method="POST" class="form-horizontal form-bordered">
+                        <form action="/Home/Create" method="POST" class="form-horizontal form-bordered">
                             <div class="form-group">
                                 <label for="textfield" class="control-label col-sm-2">Nome</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="textNome" id="textNome" placeholder="Nome" class="form-control">
+                                    <input type="text" name="NOMEUSUARIO" id="textNome" placeholder="Nome" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="textfield" class="control-label col-sm-2">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="textEmail" id="textEmail" placeholder="Nome" class="form-control">
+                                    <input type="text" name="EMAILUSUARIO" id="textEmail" placeholder="Email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="textfield" class="control-label col-sm-2">Telefone</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="TELEFONEUSUARIO" id="textTelefone" placeholder="Telefone" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="textfield" class="control-label col-sm-2">Data</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="DATANASCUSUARIO" id="textDataNascimento" placeholder="Data de Nascimento" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="textfield" class="control-label col-sm-2">Sexo:</label>
+                                <div class="col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="radio" name="SEXOUSUARIO" value="M" checked> Masculino
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="radio" name="SEXOUSUARIO" value="F"> Feminino
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="control-label col-sm-2">Senha</label>
                                 <div class="col-sm-10">
-                                    <input type="password" name="textSenha" id="textSenha" placeholder="senha" class="form-control">
+                                    <input type="password" name="textSenha" id="textSenha" placeholder="senha" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label col-sm-2">Confirmar Senha</label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="SENHAUSUARIO" id="textSenha2" placeholder="senha" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-actions col-sm-offset-2 col-sm-10">
-                                <!--<button type="submit" class="btn btn-primary">Criar conta</button>-->
-                                <a href="index.asp" class="btn btn-primary">Criar conta</a>
+                                <button type="submit" class="btn btn-primary">Criar conta</button>
+                                @*<a href="index.asp" class="btn btn-primary">Criar conta</a>*@
                             </div>
                         </form>
                     </div>
@@ -63,3 +96,4 @@
         </div>
     </div>
 </div>
+@Html.Partial("_Message")

@@ -31,11 +31,18 @@ namespace ProjetoIntegrador.Controllers
 
         //
         // POST: /Amigos/ListAmigos
-        public ActionResult ListAmigos(string searching, int? page)
+        public ActionResult ListAmigos(string search, int? page)
         {
             int pageSize = 15;
             int pageNumber = (page ?? 1);
+
             var listusers = dbcontext.usuarios.Where(x => x.IDUSUARIO != UserBussiness.IdUser && x.ATIVO == true).ToList();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                listusers = listusers.Where(x => x.NOMEUSUARIO.ToLower().Contains(search.ToLower())).ToList();
+            }
+
             return View(listusers.ToPagedList(pageNumber, pageSize));
         }
 

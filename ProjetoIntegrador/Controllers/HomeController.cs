@@ -52,7 +52,7 @@ namespace ProjetoIntegrador.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", new { msg="loginerro" });
             }
         }
 
@@ -60,6 +60,27 @@ namespace ProjetoIntegrador.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
+        }
+
+        //
+        // POST: /HOME/Create
+        [HttpPost]
+        public ActionResult Create(usuario user)
+        {
+            try
+            {
+                user.ATIVO = true;
+                user.DATACADASTRO = DateTime.Now;
+                dbcontext.usuarios.Add(user);
+                dbcontext.SaveChanges();
+                FormsAuthentication.SetAuthCookie(user.EMAILUSUARIO, false);
+                return RedirectToAction("Index");
+            }
+            catch (Exception error)
+            {
+                error.Message.ToString();
+                return RedirectToAction("Login");
+            }
         }
     }
 }

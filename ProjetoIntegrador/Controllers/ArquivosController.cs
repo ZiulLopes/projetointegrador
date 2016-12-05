@@ -22,7 +22,7 @@ namespace ProjetoIntegrador.Controllers
         {
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            
+
             var files = dbcontext.arquivoes.Where(x => x.IDUSUARIO == UserBussiness.IdUser && x.ATIVO == true).ToList();
 
             return View(files.ToPagedList(pageNumber, pageSize));
@@ -35,6 +35,37 @@ namespace ProjetoIntegrador.Controllers
             var file = dbcontext.arquivoes.Where(x => x.IDARQUIVO == id && x.ATIVO == true).FirstOrDefault();
             return View(file);
         }
+
+        //
+        // GET: /Arquivos/DeleteFile
+        public ActionResult DeleteFile(int? id)
+        {
+            // Não vamos excluir o arquivo apenas inativalo
+            var file = dbcontext.arquivoes.Find(id);
+            file.ATIVO = false;
+            dbcontext.SaveChanges();
+
+            return RedirectToAction("Index", new { msg = "filerm" });
+        }
+
+
+        //
+        // EDIT: /Arquivos/Edit
+        [HttpPost]
+        public void Edit(int id, string descricao)
+        {
+            try
+            {
+                var files = dbcontext.arquivoes.Find(id);
+                files.DESCRICAO = descricao;
+                dbcontext.SaveChanges();
+            }
+            catch (Exception error)
+            {
+                throw new Exception();
+            }
+        }
+
 
         //
         // GET: /Arquivos/Create

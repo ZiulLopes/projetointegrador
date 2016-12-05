@@ -54,6 +54,8 @@ namespace ProjetoIntegrador.Controllers
                 userContext.SEXOUSUARIO = user.SEXOUSUARIO;
                 
                 dbcontext.SaveChanges();
+
+                return RedirectToAction("Perfil", new { msg="salvo" });
             }
             catch (Exception erro)
             {
@@ -113,9 +115,13 @@ namespace ProjetoIntegrador.Controllers
 
             //file.SaveAs(string.Concat("~/", ConfigurationManager.AppSettings["Image.FolderName"], "/", idImg, ".jpg"));
 
-            string imbpath = Server.MapPath(string.Concat("~/", ConfigurationManager.AppSettings["Image.FolderName"], "/", UserBussiness.NameImageFromUser, ".jpg"));
+            string imbpath = string.Concat("/", ConfigurationManager.AppSettings["Image.FolderName"], "/", idImg, ".jpg");
 
-            file.SaveAs(imbpath);
+            file.SaveAs(Server.MapPath(imbpath));
+
+            var user = dbcontext.usuarios.Find(UserBussiness.IdUser);
+            user.PATHIMAGEM = imbpath;
+            dbcontext.SaveChanges();
             
             return Json(new { imbpath = imbpath }, JsonRequestBehavior.AllowGet);
         }
