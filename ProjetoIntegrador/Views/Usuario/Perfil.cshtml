@@ -39,7 +39,7 @@
             <div class="box-content nopadding">
                 <ul class="tabs tabs-inline tabs-top">
                     <li class="active">
-                        <a href="#profile" data-toggle="tab">
+                        <a data-toggle="tab">
                             <i class="fa fa-user"></i>Perfil</a>
                     </li>
                     @*<li class="">
@@ -60,11 +60,11 @@
                                 <div class="col-sm-2">
                                     <div class="fileinput fileinput-new" data-provides="fileinput" data-original-title="Change the avatar">
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 84px; height: 84px;">
-                                            <img src="@Model.PATHIMAGEM" alt="" style="width: 74px; height: 74px;">
+                                            <img src="@Model.PATHIMAGEM" alt="" style="width: 74px; height: 74px;" data-toggle="modal" data-target="#myModal">
                                         </div>
                                         <div>
                                             <!-- Trigger the modal with a button -->
-                                            <span class="btn btn-default btn-file fa fa-upload" data-toggle="modal" data-target="#myModal"></span>
+                                            @*<span class="btn btn-default btn-file fa fa-upload" data-toggle="modal" data-target="#myModal"></span>*@
 
                                             @*<span class="btn btn-default btn-file">
                                                 <span class="fa fa-upload"></span>

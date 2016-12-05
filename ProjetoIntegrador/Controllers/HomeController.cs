@@ -37,6 +37,10 @@ namespace ProjetoIntegrador.Controllers
         // GET: /Home/Login
         public ActionResult Login()
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
 
