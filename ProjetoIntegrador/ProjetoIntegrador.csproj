@@ -277,6 +277,7 @@
     <Content Include="Scripts\js\jquery.fileupload.js" />
     <Content Include="Scripts\js\jquery.form.min.js" />
     <Content Include="Scripts\js\jquery.imagesloaded.min.js" />
+    <Content Include="Scripts\js\jquery.mask.min.js" />
     <Content Include="Scripts\js\jquery.min.js" />
     <Content Include="Scripts\js\jquery.nicescroll.min.js" />
     <Content Include="Scripts\js\jquery.slimscroll.min.js" />

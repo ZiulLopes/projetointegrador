@@ -304,9 +304,7 @@
     function SubmitButtonOnclick() {
         var formData = new FormData();
         var file = document.getElementById("imagefile").files[0];
-        //var file1 = document.getElementById("coverFile").files[0];
         formData.append("file", file);
-        //formData.append("coverfile", file1);
         $.ajax({
             type: "POST",
             url: '/Arquivos/ArquivoInfo',

@@ -88,7 +88,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="hidden" name="regId" id="regId" value=""/>
+                    <input type="hidden" name="regId" id="regId" value="" />
                     <textarea class="form-control" id="DESCRICAO" name="DESCRICAO" style="margin: 0px 0.333333px 0px 0px; width: 567px; height: 295px;"></textarea>
                 </div>
             </div>
@@ -108,53 +108,34 @@
     fileupload.onchange = function () {
         var formData = new FormData();
         var file = document.getElementById("fileupload").files[0];
-        formData.append("file", file);
-        $.ajax({
-            type: "POST",
-            url: '/Arquivos/PostFile',
-            data: formData,
-            dataType: 'json',
-            contentType: false,
-            processData: false,
-            success: function (data) {
-                //$("#img2")
-                //    .attr("src", data.imbpath)
-                //    .show();
-                alertify.success("Arquivo Salvo!");
-                $("#tbfiles").load("Index #tbfiles");
-                //setTimeout(function () {
-                //    location.reload();
-                //}, 1000);
-            },
-            error: function (error) {
-                console.log("error!!");
-                $("#tbfiles").load("Index #tbfiles");
-            }
-        });
+
+        if (file.size > 54845462) {
+            alertify.error("Arquivo maior que 50 mb!");
+        }
+        else {
+            formData.append("file", file);
+            $.ajax({
+                type: "POST",
+                url: '/Arquivos/PostFile',
+                data: formData,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    //$("#img2")
+                    //    .attr("src", data.imbpath)
+                    //    .show();
+                    alertify.success("Arquivo Salvo!");
+                    $("#tbfiles").load("Index #tbfiles");
+                    //setTimeout(function () {
+                    //    location.reload();
+                    //}, 1000);
+                },
+                error: function (error) {
+                    console.log("error!!");
+                    $("#tbfiles").load("Index #tbfiles");
+                }
+            });
+        }
     };
-    //function () {
-    //    var formData = new FormData();
-    //    var file = document.getElementById("fileupload").files[0];
-    //    formData.append("file", file);
-    //    $.ajax({
-    //        type: "POST",
-    //        url: '/Arquivos/Index',
-    //        data: formData,
-    //        dataType: 'json',
-    //        contentType: false,
-    //        processData: false,
-    //        success: function (data) {
-    //            //$("#img2")
-    //            //    .attr("src", data.imbpath)
-    //            //    .show();
-    //            alertify.confirm("Arquivo Salvo!");
-    //            setTimeout(function () {
-    //                location.reload();
-    //            }, 1000);
-    //        },
-    //        error: function (error) {
-    //            console.log("error!!");
-    //        }
-    //    });
-    //};
 </script>

@@ -83,7 +83,10 @@ namespace ProjetoIntegrador.Controllers
             {
                 try
                 {
-                    string filepath = string.Concat("/", ConfigurationManager.AppSettings["File.FolderName"], "/", file.FileName);
+                    Random rnd = new Random();
+                    int hash = rnd.Next(1, 99999999);
+
+                    string filepath = string.Concat("/", ConfigurationManager.AppSettings["File.FolderName"], "/" + hash + "_", file.FileName);
                     file.SaveAs(Server.MapPath(filepath));
 
                     arquivoContext.PATHARQUIVO = filepath;

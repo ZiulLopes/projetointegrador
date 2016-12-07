@@ -66,3 +66,27 @@ function EditReg() {
         }
     });
 }
+
+// Validar senha
+function ValidPass(pass) {
+    var pass1 = document.getElementById("textSenha");
+    var pass2 = document.getElementById("textSenha2");
+    if (pass1.value != pass2.value) {
+        alertify.error("Senhas devem ser iguais!");
+        pass1.value = "";
+        pass2.value = "";
+    }
+}
+
+//Start Jquery
+$(document).ready(function () {
+    $(".validCpf").mask("999.999.999-99");
+    $(".maskcpf").mask("999.999.999-99");
+    $(".validCNPJ").mask("99.999.999/9999-99");
+    $(".maskcnpj").mask("99.999.999/9999-99");
+
+    $(".dtNascimento").mask("99/99/9999");
+
+    $(".maskphone").mask("(99) 9999-9999");
+
+});
